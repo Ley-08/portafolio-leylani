@@ -1,0 +1,335 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #ffffff;
+  color: #212121;
+  scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+  font-family: "Playfair Display", serif;
+}
+
+/* Navbar */
+.navbar {
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.logo {
+  font-weight: 600;
+  color: #e91e63;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #e91e63;
+}
+
+/* ====== 🌸 HERO CON DEGRADADO ANIMADO ====== */
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 6rem 1rem;
+  color: #212121;
+  overflow: hidden;
+}
+
+/* Fondo animado con gradiente */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(135deg, #fce4ec, #f8bbd0, #f48fb1, #fce4ec);
+  background-size: 300% 300%;
+  z-index: -1;
+  animation: gradientMove 10s ease infinite;
+  filter: blur(40px);
+  opacity: 0.9;
+}
+
+/* Animación del fondo */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Contenido del héroe */
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 650px;
+  margin: auto;
+}
+
+.hero h2 {
+  font-size: 2rem;
+  font-family: "Playfair Display", serif;
+  color: #212121;
+}
+
+.hero p {
+  margin: 1rem auto;
+  max-width: 600px;
+  color: #333;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: #e91e63;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  background: #c2185b;
+}
+
+/* ====== ✨ PARTÍCULAS FLOTANTES ====== */
+#particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2; /* Asegura que el texto quede arriba de las partículas */
+}
+
+
+/* Sections */
+section {
+  padding: 4rem 0;
+}
+
+section h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+/* Projects */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  margin: 1rem;
+  color: #e91e63;
+}
+
+.project-card p {
+  margin: 0 1rem 1rem;
+  color: #555;
+}
+
+/* Skills */
+.skill {
+  margin-bottom: 1.2rem;
+}
+
+.bar {
+  background: #f5f5f5;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 10px;
+}
+
+.bar span {
+  display: block;
+  height: 10px;
+  background: #e91e63;
+  transition: width 1s;
+}
+
+/* Contact */
+.contact {
+  text-align: center;
+}
+
+.btn-secondary {
+  display: inline-block;
+  margin-top: 1rem;
+  background: #212121;
+  color: #fff;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.btn-secondary:hover {
+  background: #e91e63;
+}
+
+/* Footer */
+.footer {
+  background: #f5f5f5;
+  text-align: center;
+  padding: 1rem;
+  color: #777;
+  font-size: 0.9rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+}
+/* ====== 🔹 MENÚ MÓVIL 🔹 ====== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: #e91e63;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* Oculta el menú en móvil por defecto */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 70px;
+    right: 20px;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-links.show {
+    display: flex;
+    animation: fadeIn 0.3s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* Animación de la hamburguesa al abrir */
+.menu-toggle.open .bar:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+ 
+
+/* ====== 🔹 ANIMACIONES DE ENTRADA 🔹 ====== */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1.2s ease-out forwards;
+}
+
+.fade-delay-1 {
+  animation-delay: 0.2s;
+}
+
+.fade-delay-2 {
+  animation-delay: 0.4s;
+}
+
+.fade-delay-3 {
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
